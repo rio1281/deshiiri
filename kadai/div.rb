@@ -2,7 +2,12 @@
 require 'test/unit'
 
 def div(a, b, x)
-  # ここに処理を書く
+    s = ""
+    for i in 1..x + 1 do
+        a / b += s
+        a % b = a
+    end
+    puts s[x]
 end
 
 class TestDiv < Test::Unit::TestCase
