@@ -2,12 +2,8 @@
 require 'test/unit'
 
 def div(a, b, x)
-    s = ""
-    for i in 1..x + 1 do
-        a / b += s
-        a % b = a
-    end
-    puts s[x]
+  num = a * (10 ** x) / b
+  puts num.to_s[x]
 end
 
 class TestDiv < Test::Unit::TestCase
