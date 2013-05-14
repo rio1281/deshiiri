@@ -3,8 +3,17 @@ require 'test/unit'
 
 def div(a, b, x)
   num = a * (10 ** x) / b
-  puts num.to_s[x]
+  return num.to_s[x].to_i
 end
+
+=begin
+
+def div(a, b, x)
+  num = a.to_f / b
+  return num.to_s[x + 1].to_i
+end
+
+=end
 
 class TestDiv < Test::Unit::TestCase
   def test_1
