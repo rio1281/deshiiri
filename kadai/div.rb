@@ -2,9 +2,29 @@
 require 'test/unit'
 
 def div(a, b, x)
+
+  for i in 1..x do
+    num = (a % b) * 10 / b #num = 小数点以下の数値
+    a = a % b * 10
+  end
+
+  return num
+end
+
+
+=begin
+
+a % b = a1
+a1 / b = 小数点第一位
+a1 % b = a2
+繰り返し
+
+def div(a, b, x)
   num = a * (10 ** x) / b
   return num.to_s[x].to_i
 end
+
+=end
 
 =begin
 
@@ -14,6 +34,7 @@ def div(a, b, x)
 end
 
 =end
+
 
 class TestDiv < Test::Unit::TestCase
   def test_1
