@@ -14,19 +14,32 @@ end
 
 =begin
 
-a % b = a1
-a1 / b = 小数点第一位
-a1 % b = a2
-繰り返し
+# each構文var
+
+def div(a, b, x)
+
+  num = 0
+
+  (1..x).each do
+    num = (a % b) * 10 / b #num = 小数点以下の数値
+    a = a % b * 10
+  end
+
+  return num
+end
+
+
+# 間違ったやり方①
+# 原因：整数部分の桁数で答えがずれる
 
 def div(a, b, x)
   num = a * (10 ** x) / b
   return num.to_s[x].to_i
 end
 
-=end
 
-=begin
+# 間違ったやり方②
+# 原因：不明
 
 def div(a, b, x)
   num = a.to_f / b
